@@ -9,7 +9,7 @@ const app = express();
 
 //importing routes
 const principalRoutes = require('./routes/principal');
-const loginRoutes= require('./routes/login');
+const loginRoutes = require('./routes/login');
 
 
 //settings 
@@ -22,14 +22,14 @@ app.use(morgan('dev'))
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: '1234',
-    port: 3307,
+    password: '',
+    port: 3306,
     database: '',
 }, 'single'));
 
 //routes
 app.use('/', principalRoutes); // Pagina Principal
-app.use('/login',loginRoutes);//Pagina Login
+app.use('/login', loginRoutes); //Pagina Login
 
 
 //archivos estaticos
