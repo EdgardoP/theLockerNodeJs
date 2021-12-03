@@ -8,7 +8,7 @@ const myConnection = require('express-myconnection');
 const app = express();
 
 //importing routes
-const loginRoutes = require('./routes/login');
+const principalRoutes = require('./routes/principal');
 
 
 //settings 
@@ -27,7 +27,7 @@ app.use(myConnection(mysql, {
 }, 'single'));
 
 //routes
-app.use('/', loginRoutes); // Pagina Principal
+app.use('/', principalRoutes); // Pagina Principal
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')))
