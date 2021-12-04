@@ -10,7 +10,7 @@ const app = express();
 //importing routes
 const principalRoutes = require('./routes/principal');
 const loginRoutes = require('./routes/login');
-
+const registroRoutes = require('./routes/registro');
 
 //settings 
 app.set('port', process.env.PORT || 3000);
@@ -30,6 +30,7 @@ app.use(myConnection(mysql, {
 //routes
 app.use('/', principalRoutes); // Pagina Principal
 app.use('/login', loginRoutes); //Pagina Login
+app.use('/registro',registroRoutes); //Pagina Registro
 
 
 //archivos estaticos
