@@ -34,16 +34,18 @@
 
         <div class="loginDer">
             <h2>Ingrese sus Datos</h2>
-            <div class="inputs">
-                <input class="cajaTexto" type="text" placeholder="Nombre de Usuario">
-                <input class="cajaTexto" type="email" placeholder="Correo Electronico">
-                <input class="cajaTexto" type="number" placeholder="Numero Telefonico">
-                <input class="cajaTexto" type="password" placeholder="Contraseña">
-                <input class="cajaTexto" type="password" placeholder="Confirmar Contraseña">
+            <div class="">
+                <form action="/add" method="post" class="inputs">
+                    <input class="cajaTexto" name="nombreCliente" type="text" placeholder="Nombre de Usuario">
+                    <input class="cajaTexto" name="correoCliente" type="text" placeholder="Correo Electronico">
+                    <input class="cajaTexto" name="numeroCliente" type="number" placeholder="Numero Telefonico">
+                    <input class="cajaTexto" name="password" type="password" placeholder="Contraseña">
+                    <!-- <input class="cajaTexto" name="password" type="password" placeholder="Confirmar Contraseña"> -->
             </div>
             <div class="contenedorBoton">
-                <button class="boton btn-registrar">Registrar</button>
+                <button type="submit" class="boton btn-registrar">Registrar</button>
             </div>
+            </form>
         </div>
 
     </div>

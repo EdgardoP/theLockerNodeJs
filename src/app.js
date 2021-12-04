@@ -22,15 +22,17 @@ app.use(morgan('dev'))
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '1234',
     port: 3306,
-    database: '',
+    database: 'the_locker',
 }, 'single'));
 
+app.use(express.urlencoded({ extended: true }))
+
 //routes
-app.use('/', principalRoutes); // Pagina Principal
+app.use('/principal', principalRoutes); // Pagina Principal
 app.use('/login', loginRoutes); //Pagina Login
-app.use('/registro',registroRoutes); //Pagina Registro
+app.use('/', registroRoutes); //Pagina Registro
 
 
 //archivos estaticos
