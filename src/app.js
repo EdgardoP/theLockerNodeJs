@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }))
 
 //routes
 app.use('/principal', principalRoutes); // Pagina Principal
-app.use('/login', loginRoutes); //Pagina Login
+app.use('/', loginRoutes); //Pagina Login
 app.use('/', registroRoutes); //Pagina Registro
 
 
