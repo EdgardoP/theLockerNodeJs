@@ -11,6 +11,7 @@ const app = express();
 const principalRoutes = require('./routes/principal');
 const loginRoutes = require('./routes/login');
 const registroRoutes = require('./routes/registro');
+const ropaHombre = require('./routes/hombre');
 
 //settings 
 app.set('port', process.env.PORT || 3000);
@@ -30,9 +31,10 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({ extended: true }))
 
 //routes
-app.use('/principal', principalRoutes); // Pagina Principal
+app.use('/', principalRoutes); // Pagina Principal
 app.use('/', loginRoutes); //Pagina Login
 app.use('/', registroRoutes); //Pagina Registro
+app.use('/', ropaHombre); //Pagina Hombre
 
 
 //archivos estaticos
