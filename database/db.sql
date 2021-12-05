@@ -14,7 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema the_locker
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `the_locker` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+CREATE SCHEMA IF NOT EXISTS `the_locker` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ;
 USE `the_locker` ;
 
 -- -----------------------------------------------------
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `the_locker`.`cliente` (
   PRIMARY KEY (`correoCliente`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `the_locker`.`prenda` (
   PRIMARY KEY (`idPrenda`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS `the_locker`.`carrito` (
   `idCliente` VARCHAR(45) NULL DEFAULT NULL,
   `idPrenda` INT NULL DEFAULT NULL,
   PRIMARY KEY (`idCarrito`),
-  INDEX `idCliente_idx` (`idCliente` ASC) VISIBLE,
-  INDEX `idPrenda_idx` (`idPrenda` ASC) VISIBLE,
+  INDEX `idCliente_idx` (`idCliente` ASC) ,
+  INDEX `idPrenda_idx` (`idPrenda` ASC) ,
   CONSTRAINT `idCliente`
     FOREIGN KEY (`idCliente`)
     REFERENCES `the_locker`.`cliente` (`correoCliente`),
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `the_locker`.`carrito` (
     REFERENCES `the_locker`.`prenda` (`idPrenda`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
