@@ -1,5 +1,25 @@
 <%- include('partials/_header.ejs') %>
-
+    <div class="contenedorTarjetas">
+        <% if (data) { %>
+            <% for( let index = 0; index < data.length; index++ ) { %>
+                <div class="tarjeta">
+                    <!-- Nombre de prenda -->
+                    <img class="imagenTarjeta" src=" <%= data[index].imagenPrenda %> " alt="imagen">
+                    <div class="infoTarjeta">
+                        <h2 class="tituloTarjeta"> <%= data[index].nombrePrenda %>  </h2> 
+                        <b class="descripcionTarjeta">  <%= data[index].descripcionPrenda %> </b>
+                        <div class="pieTarjeta">
+                            <button class="botonTarjeta">
+                                <span class="material-icons">shopping_cart</span>
+                                Agregar al carrito
+                            </button>
+                            <b>Precio: L. <%= data[index].precioPrenda %>  </b>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
 
 
     <%- include('partials/_footer.ejs') %>

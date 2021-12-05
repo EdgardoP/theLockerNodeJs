@@ -23,7 +23,7 @@ app.use(morgan('dev'))
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '1234',
     port: 3306,
     database: 'the_locker',
 }, 'single'));
@@ -31,8 +31,8 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({ extended: true }))
 
 //routes
-app.use('/', principalRoutes); // Pagina Principal
 app.use('/', loginRoutes); //Pagina Login
+app.use('/', principalRoutes); // Pagina Principal
 app.use('/', registroRoutes); //Pagina Registro
 app.use('/', ropaHombre); //Pagina Hombre
 
