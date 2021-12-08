@@ -3,7 +3,6 @@ const router = express.Router();
 
 const principalControlador = require('../controllers/principalControlador')
 
-router.get('/', principalControlador.list)
-    //router.get('/ropaHombre', principalControlador.ropaHombre)
+router.get('/principal', principalControlador.list)
 
 module.exports = router;

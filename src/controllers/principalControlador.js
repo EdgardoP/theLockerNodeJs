@@ -1,13 +1,6 @@
 const controller = {}
 
 controller.list = (req, res) => {
-    const data = req.body
-    console.log(data);
-    res.render('principal')
+    console.log("Hola mi pana");
 };
-
-/*controller.ropaHombre = (req, res) => {
-    res.render('ropaHombre')
-}*/
-
 module.exports = controller;

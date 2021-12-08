@@ -79,8 +79,10 @@ a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
     padding: 2% 10% 10% 5%;
     background-image: url('/img/FondoLoginTransparente.jpg');
+    height: 100%;
 }
 
 .tarjeta {
@@ -88,6 +90,7 @@ a {
     height: 390px;
     margin: 10px 40px 40px 10px;
     box-shadow: rgba(0, 0, 0, 0.712) 3px 4px 10px;
+    margin-bottom: 200px;
 }
 
 .imagenTarjeta {
@@ -172,8 +175,6 @@ footer {
     font-size: 25px;
     padding: 15px;
     color: white;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 

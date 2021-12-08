@@ -12,8 +12,10 @@ const principalRoutes = require('./routes/principal');
 const loginRoutes = require('./routes/login');
 const registroRoutes = require('./routes/registro');
 const ropaHombre = require('./routes/hombre');
-
-//settings 
+const ropaMujer = require('./routes/mujer');
+const ropaInfantil = require('./routes/nino')
+const explorar = require('./routes/explorar')
+    //settings 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
@@ -35,9 +37,10 @@ app.use('/', loginRoutes); //Pagina Login
 app.use('/', principalRoutes); // Pagina Principal
 app.use('/', registroRoutes); //Pagina Registro
 app.use('/', ropaHombre); //Pagina Hombre
-
-
-//archivos estaticos
+app.use('/', ropaMujer); //Pagina Mujer   
+app.use('/', ropaInfantil) //ropaInfantil
+app.use('/', explorar) //Explorar
+    //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')))
 
 
