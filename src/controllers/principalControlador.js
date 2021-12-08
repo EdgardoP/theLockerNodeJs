@@ -1,6 +1,6 @@
 const controller = {}
 
 controller.list = (req, res) => {
-    console.log("Hola mi pana");
+    res.render('principal')
 };
 module.exports = controller;
