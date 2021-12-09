@@ -1,0 +1,27 @@
+<div class="l-navbar" id="navbar">
+    <div class=".nav">
+        <!-- Logo+Text -->
+        <a href="#" class="nav-logo-container">
+            <span class="material-icons">
+                shopping_bag
+                </span>
+            <span class="logo-text">Lista de Compras Actual</span>
+        </a>
+        <!-- Toggle -->
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="material-icons iconoBlanco">chevron_right</span>
+        </div>
+        <!-- Lista de compras -->
+        <ul class="nav-list">
+            <% if (dataLista) { %>
+                <% for( let index = 0; index < dataLista.length; index++ ) { %>
+                    <a href="#" class="nav-link active">
+                        <span class="material-icons">checkroom</span>
+                        <span class="logo-text"> <%= dataLista[index].nombrePrenda %>  </span>
+                    </a>
+                <% } %>
+            <% } %>
+        </ul>
+    </div>
+    <script src="/scripts/slideBar.js"></script>
+</div>

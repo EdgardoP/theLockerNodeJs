@@ -22,6 +22,7 @@ controller.mostrarCarrito = (req, res) => {
                 res.json(err)
             } else {
                 console.log(carrito)
+                localStorage.setItem('pagina', "carrito");
                 res.render('carrito', {
                     data: carrito
                 })
@@ -39,9 +40,20 @@ controller.guardarCarrito = (req, res) => {
                 res.json(err)
             } else {
                 console.log("Agregado correctamente")
+                res.redirect(`/${localStorage.getItem('pagina')}`);
             }
         })
     })
 }
+
+controller.eliminarProducto = (req, res) => {
+    const { id } = req.params
+    req.getConnection((err, conn) => {
+        conn.query('DELETE FROM carrito where idCarrito = ? ', [id], (err, rows) => {
+            res.redirect(`/${localStorage.getItem('pagina')}`);
+        })
+    })
+}
+
 
 module.exports = controller;

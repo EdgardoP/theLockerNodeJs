@@ -20,7 +20,7 @@
                                 <p class="textoCarrito"> Clasificacion: <%= data[index].clasificacionPrenda %></p>
                                 <button class="botonTarjetaCarrito">
                                     <span class="material-icons">delete</span>
-                                    <a href="">Quitar del Carrito</a>
+                                    <a href="/eliminarProducto/ <%= data[index].idCarrito %>  ">Quitar del Carrito</a>
                                 </button>
                             </div>
                         </div>
@@ -39,15 +39,30 @@
                     </div>
                     <div class="casillaTotales">
                         <p> SubTotal:</p>
-                        <p> </p>
+                        <% let acumulador = 0 %> 
+                            <% if (data) { %>
+                                <% for( let index = 0; index < data.length; index++ ) { %>
+                                        <% acumulador = (acumulador + parseFloat(data[index].precioPrenda)) %> 
+                                <% } %>
+                                <% console.log(acumulador) %> 
+                                <p> L. <%= acumulador %>  </p>
+                            <% } %>    
                     </div>
                     <div class="casillaTotales">
                         <p> Impuesto:</p>
-                        <p> </p>
+                        <% let impuestos = 0 %>
+                        <% if (data) { %> 
+                            <% impuestos = acumulador * 0.15 %> 
+                            <p> L. <%= impuestos %>  </p>
+                        <% } %>    
                     </div>
                     <div class="casillaTotales">
                         <p class="totalAPagar"> Total a Pagar:</p>
-                        <p class="totalAPagar"> </p>
+                        <% let total = 0 %>
+                        <% if (data) { %> 
+                            <% total = acumulador + impuestos %> 
+                            <p> L. <%= total %>  </p>
+                        <% } %>  
                     </div>
                     <div class="contenedorBotonTotalPagar">
                         <button class="botonTotalPagar">
