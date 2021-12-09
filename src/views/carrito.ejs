@@ -1,0 +1,63 @@
+<%- include("partials/_header.ejs") %>
+
+    <h2>Lista de Productos</h2>
+    <div class="contenedorCarrito">
+        <% if (data) { %>
+            <% for( let index = 0; index < data.length; index++ ) { %>
+                <div class="tarjetaCarrito">
+                    <div class="imgContenedorCarrito">
+                        <img class="imagenCarrito" src=" <%= data[index].imagenPrenda %>  " alt="Imagen del Carrito">
+                    </div>
+                    <div class="infoCarrito">
+                        <div class="alinear">
+                            <h3 class="tituloTarjetaCarrito">
+                                <%= data[index].nombrePrenda %>
+                            </h3>
+                            <p class="tituloTarjetaCarrito"> L.
+                                <%= data[index].precioPrenda %>
+                            </p>
+                        </div>
+                        <p class="textoCarrito"> Descripcion:
+                            <%= data[index].descripcionPrenda %>
+                        </p>
+                        <p class="textoCarrito"> Talla:
+                            <%= data[index].tallaPrenda %>
+                        </p>
+                        <div class="mostrarPrecio alinear">
+                            <p class="textoCarrito"> Clasificacion:
+                                <%= data[index].clasificacionPrenda %>
+                            </p>
+                            <button><a href="/principal">Quitar del Carrito</a></button>
+
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                    <% } %>
+                        <div class="informacionPago">
+                            <p class="tituloTotales"> Totales del Carrito</p>
+                            <div class="sumaTotales">
+                                <div class="casillaTotales">
+                                    <p> Nombre Cliente:</p>
+                                    <p>Nombre de Usuario</p>
+                                </div>
+                                <div class="casillaTotales">
+                                    <p> SubTotal:</p>
+                                    <p> </p>
+                                </div>
+                                <div class="casillaTotales">
+                                    <p> Impuesto:</p>
+                                    <p> </p>
+                                </div>
+                                <div class="casillaTotales">
+                                    <p class="totalAPagar"> Total a Pagar:</p>
+                                    <p class="totalAPagar"> </p>
+                                </div>
+                                <div class="botonTotalPagar">
+                                    <button><a href="">Proceder con el Pago </a></button>
+                                </div>
+                            </div>
+                        </div>
+    </div>
+
+    <%- include("partials/_footer.ejs") %>

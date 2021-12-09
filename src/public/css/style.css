@@ -194,3 +194,45 @@ footer {
     padding: 20px 40px 100px 40px;
     font-size: 40px;
 }
+
+.contenedorCarrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+
+.tarjetaCarrito {
+    width: 70%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    margin: 2% 3% 0% 2%;
+    border: #000 1px solid;
+}
+
+.imagenCarrito {
+    width: 140px;
+    height: 70%;
+    box-shadow: rgba(0, 0, 0, 0.712) 3px 4px 10px;
+}
+
+.tituloTarjetaCarrito {
+    font-size: 30px;
+}
+
+.alinear {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infoCarrito {
+    width: 100%;
+}
+
+.imgContenedorCarrito {
+    margin-right: 5px;
+    height: 250px;
+}
