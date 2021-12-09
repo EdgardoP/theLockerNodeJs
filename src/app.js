@@ -27,7 +27,7 @@ app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
     password: '1234',
-    port: 3307,
+    port: 3306,
     database: 'the_locker',
 }, 'single'));
 
@@ -43,7 +43,7 @@ app.use('/', ropaInfantil) //ropaInfantil
 app.use('/', explorar) //Explorar
 app.use('/', carrito) //carrito
 
-    //archivos estaticos
+//archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')))
 
 
