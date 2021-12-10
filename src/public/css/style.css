@@ -81,6 +81,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 100px 0px 100px 0px;
 }
 
 .contenedorTarjetas {
@@ -100,13 +101,14 @@ a {
     margin: 10px 40px 40px 10px;
     box-shadow: rgba(0, 0, 0, 0.712) 3px 4px 10px;
     margin-bottom: 200px;
+    transition: 0.3s;
 }
 
 .tarjeta:hover {
     filter: grayscale(40%);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .imagenTarjeta {
@@ -117,7 +119,6 @@ a {
 .tallas {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2%;
 }
 
 .tallas img {
@@ -126,10 +127,9 @@ a {
 
 .tituloTalla {
     background-color: #125975;
-    margin-top: 2%;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 40px 0px 40px 0px;
 }
 
 .tituloTalla h2 {
@@ -140,12 +140,15 @@ a {
 .contenedorAvatar {
     padding: 10px;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .tituloAutor {
     text-align: center;
     background-color: #125975;
-    padding: 15px;
+    padding: 40px 0px 40px 0px;
 }
 
 .tituloAutor h2 {
@@ -158,7 +161,6 @@ a {
     display: flex;
     flex-direction: row;
     width: 50%;
-    margin-left: 24%;
 }
 
 .cardP {
@@ -231,27 +233,6 @@ a {
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.712) 3px 4px 10px;
 }
-
-
-/* .tarjeta {
-    margin: 10px;
-    padding: 15px;
-    width: 390px;
-    height: 430px;
-    background-color: rgb(236, 236, 236);
-    border-radius: 18px;
-    box-shadow: rgba(0, 0, 0, 0.363) 3px 4px 10px;
-}
-
-.tarjeta img {
-    width: 200px;
-    height: 300px;
-}
-
-.tarjetaImagen {
-    display: flex;
-    justify-content: center;
-} */
 
 .texto1 {
     font-size: 20px;
@@ -434,7 +415,7 @@ footer {
 }
 
 .parallax2 p {
-    padding: 10px 0px 50px 0px;
+    padding: 110px 0px 110px 0px;
     font-size: 35px;
     color: white;
     text-align: center;

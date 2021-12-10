@@ -1,8 +1,10 @@
 <%- include("partials/_header.ejs") %>
+<%- include('partials/_modal.ejs') %>
 <div class="contenedorPrincipal">
     <div class="contenedorCarrito">
         <div class="contenedorTarjetasCarrito">
-            <% if (data) { %>
+            <% if (!data.length == 0) { %>
+                    <% console.log(data.length) %> 
                 <% for( let index = 0; index < data.length; index++ ) { %>
                     <div class="tarjetaCarrito">
                         <div class="imgContenedorCarrito">
@@ -26,7 +28,13 @@
                         </div>
                     </div>
                 <% } %>
-            <% } %>
+            <% }else { %> %>
+                <div class="tarjetaCarrito">
+                    <div class="infoCarrito">
+                        <h2>Aun no has agregado nada a tu carrito!</h2>
+                    </div>
+                </div>
+            <% }   %> 
         </div>
             <div class="informacionPago">
                 <div class="tituloTotales">
@@ -44,7 +52,6 @@
                                 <% for( let index = 0; index < data.length; index++ ) { %>
                                         <% acumulador = (acumulador + parseFloat(data[index].precioPrenda)) %> 
                                 <% } %>
-                                <% console.log(acumulador) %> 
                                 <p> L. <%= acumulador %>  </p>
                             <% } %>    
                     </div>
@@ -61,15 +68,15 @@
                         <% let total = 0 %>
                         <% if (data) { %> 
                             <% total = acumulador + impuestos %> 
-                            <p> L. <%= total %>  </p>
+                            <p id="total"> L. <%= total %>  </p>
                         <% } %>  
                     </div>
                     <div class="contenedorBotonTotalPagar">
-                        <button class="botonTotalPagar">
+                        <button onclick= "abrirModalPagar()" class="botonTotalPagar">
                             <span class="material-icons">
                                 attach_money
                                 </span>
-                            <a href="/pagarCarrito"> Proceder con el Pago</a>
+                            <a href=""> Proceder con el Pago</a>
                         </button>
                     </div>
                 </div>
