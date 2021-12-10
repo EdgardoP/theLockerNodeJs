@@ -88,7 +88,7 @@ a {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    padding: 2% 10% 10% 13%;
+    padding: 2% 10% 10% 9%;
     background-image: url('/img/FondoLoginTransparente.jpg');
     height: 100%;
     min-height: 100vh;
