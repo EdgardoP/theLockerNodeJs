@@ -98,7 +98,7 @@ blockquote span {
 }
 
 .cd-slider li.current_slide .content {
-    opacity: 30;
+    opacity: 100%;
     transform: scale(1);
 }
 
