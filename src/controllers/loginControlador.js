@@ -30,7 +30,7 @@ controller.inicioSesion = (req, res) => {
                         data: results[0]
                     })
                 } else {
-                    alert("No ingreso bien los datos")
+                    res.render('login')
                 }
             })
 

@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modal.css">
 
     <title>The Locker</title>
 </head>
@@ -25,36 +26,37 @@
         </h1>
     </header>
 
-    <div class="contenedorPrincipal">
-        <div class="loginIzq">
-            <h2>Registrate</h2>
-            <p>Ingresa tus datos y llena el siguente formulario para poder disfrutar de todos los servicios que The Locker te ofrece.</p>
-            <div class="contenedorBoton">
-                <button class="boton btn-ingresar"> <a href="/"> Ingresar</a></button>
+    <%- include('partials/_modal.ejs') %>
+
+        <div class="contenedorPrincipal">
+            <div class="loginIzq">
+                <h2>Registrate</h2>
+                <p>Ingresa tus datos y llena el siguente formulario para poder disfrutar de todos los servicios que The Locker te ofrece.</p>
+                <div class="contenedorBoton">
+                    <button class="boton btn-ingresar"> <a href="/"> Ingresar</a></button>
+                </div>
             </div>
+
+            <div class="loginDer">
+                <h2>Ingrese sus Datos</h2>
+                <div class="">
+                    <form action="/add" method="post" class="inputs">
+                        <input class="cajaTexto" id="nombreCliente" name="nombreCliente" type="text" placeholder="Nombre de Usuario" maxlength="15" minlength="2">
+                        <input class="cajaTexto" id="correoCliente" name="correoCliente" type="text" placeholder="Correo Electronico" maxlength="50">
+                        <input class="cajaTexto" id="numeroCliente" name="numeroCliente" type="number" placeholder="Numero Telefonico" maxlength="8">
+                        <input class="cajaTexto" id="password" name="password" type="password" placeholder="Contraseña" minlength="8">
+                </div>
+                <div class="contenedorBoton">
+                    <button id="mybtn" onclick="validarFormulario() " type="submit" class="boton btn-registrar">Registrar</button>
+                </div>
+                </form>
+            </div>
+
         </div>
 
-        <div class="loginDer">
-            <h2>Ingrese sus Datos</h2>
-            <div class="">
-                <form action="/add" method="post" class="inputs">
-                    <input class="cajaTexto" name="nombreCliente" type="text" placeholder="Nombre de Usuario">
-                    <input class="cajaTexto" name="correoCliente" type="text" placeholder="Correo Electronico">
-                    <input class="cajaTexto" name="numeroCliente" type="number" placeholder="Numero Telefonico">
-                    <input class="cajaTexto" name="password" type="password" placeholder="Contraseña">
-                    <!-- <input class="cajaTexto" name="password" type="password" placeholder="Confirmar Contraseña"> -->
-            </div>
-            <div class="contenedorBoton">
-                <button type="submit" class="boton btn-registrar">Registrar</button>
-            </div>
-            </form>
+        <div class="footerL">
+            <footer>DERECHOS RESERVADOS</footer>
         </div>
-
-    </div>
-
-    <div class="footerL">
-        <footer>DERECHOS RESERVADOS</footer>
-    </div>
 </body>
 
 </html>

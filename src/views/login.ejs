@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modal.css">
 
     <title>The Locker</title>
 </head>
@@ -25,42 +26,43 @@
         </h1>
     </header>
 
-    <div class="contenedorPrincipal">
-        <div class="loginIzq">
-            <h2>Ingresar</h2>
-            <div class="redesSocialesIcons">
-                <img class="icono" src="/img/facebook.png" alt="">
-                <img class="icono" src="/img/instagram.png" alt="">
-                <img class="icono" src="/img/gmail.png" alt="">
+    <%- include('partials/_modal.ejs') %>
+        <div class="contenedorPrincipal">
+            <div class="loginIzq">
+                <h2>Ingresar</h2>
+                <div class="redesSocialesIcons">
+                    <img class="icono" src="/img/facebook.png" alt="">
+                    <img class="icono" src="/img/instagram.png" alt="">
+                    <img class="icono" src="/img/gmail.png" alt="">
+                </div>
+                <p>...o usa tu cuenta</p>
+                <form action="/principal" method="post">
+                    <div class="inputs">
+                        <input class="cajaTexto" id="correoClienteLogin" name="correoCliente" type="text" placeholder="Email">
+                        <input class="cajaTexto" id="passwordLogin" name="password" type="password" placeholder="Contraseña">
+                    </div>
+                    <p>¿Olvidaste tu contraseña?</p>
+                    <div class="contenedorBoton">
+                        <button id="mybtn" onclick="validarFormularioLogin()" type="submit" class="boton btn-ingresar">Ingresar</button>
+                    </div>
+                </form>
             </div>
-            <p>...o usa tu cuenta</p>
-            <form action="/principal" method="post">
-                <div class="inputs">
-                    <input class="cajaTexto" name="correoCliente" type="text" placeholder="Email">
-                    <input class="cajaTexto" name="password" type="password" placeholder="Contraseña">
-                </div>
-                <p>¿Olvidaste tu contraseña?</p>
-                <div class="contenedorBoton">
-                    <button class="boton btn-ingresar">Ingresar</button>
-                </div>
-            </form>
+
+            <div class="loginDer">
+                <h2>Bienvenido</h2>
+                <p>Sino tienes una cuenta, puedes registrarte aquí</p>
+                <form action="/registro" method="get">
+                    <div class="contenedorBoton">
+                        <button class="boton btn-registrar">Registrar</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
 
-        <div class="loginDer">
-            <h2>Bienvenido</h2>
-            <p>Sino tienes una cuenta, puedes registrarte aquí</p>
-            <form action="/registro" method="get">
-                <div class="contenedorBoton">
-                    <button class="boton btn-registrar">Registrar</button>
-                </div>
-            </form>
+        <div class="footerL">
+            <footer>DERECHOS RESERVADOS</footer>
         </div>
-
-    </div>
-
-    <div class="footerL">
-        <footer>DERECHOS RESERVADOS</footer>
-    </div>
 </body>
 
 </html>
