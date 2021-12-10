@@ -13,7 +13,7 @@ const consulta = "select" +
     " on carrito.idCliente = cliente.correoCliente" +
     " inner join the_locker.prenda" +
     " on carrito.idPrenda = prenda.Idprenda" +
-    " where idCliente ="
+    " where estadoCarrito = 'reservado' and idCliente ="
 
 controller.mostrarCarrito = (req, res) => {
     req.getConnection((err, conn) => {
@@ -35,7 +35,7 @@ controller.guardarCarrito = (req, res) => {
     const { id } = req.params;
     console.log(id);
     req.getConnection((err, conn) => {
-        conn.query(`INSERT INTO the_locker.carrito (idCliente, idPrenda) VALUES ('${localStorage.getItem('correoCliente')}', '${id}');`, (err, cliente) => {
+        conn.query(`INSERT INTO the_locker.carrito (idCliente, idPrenda, estadoCarrito) VALUES ('${localStorage.getItem('correoCliente')}', '${id}',"reservado");`, (err, cliente) => {
             if (err) {
                 res.json(err)
             } else {
@@ -51,6 +51,15 @@ controller.eliminarProducto = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query('DELETE FROM carrito where idCarrito = ? ', [id], (err, rows) => {
             res.redirect(`/${localStorage.getItem('pagina')}`);
+        })
+    })
+}
+
+controller.pagarCarrito = (req, res) => {
+    //const { id } = req.params;
+    req.getConnection((err, conn) => {
+        conn.query(`UPDATE the_locker.carrito SET estadoCarrito = 'pagado' WHERE (idCliente= '${localStorage.getItem('correoCliente')}');`, (err, rows) => {
+            res.redirect('/carrito')
         })
     })
 }

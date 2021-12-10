@@ -4,7 +4,7 @@ const listaCarrito = " select the_locker.prenda.nombrePrenda " +
     " from the_locker.carrito " +
     " inner join the_locker.prenda " +
     " on the_locker.carrito.idPrenda = the_locker.prenda.idPrenda " +
-    " where the_locker.carrito.idCliente = ";
+    " where estadoCarrito = 'reservado' and idCliente = ";
 
 let listaElementos = null;
 

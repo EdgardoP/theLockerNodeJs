@@ -33,11 +33,13 @@
                     <li><a href="/explorar">Explorar</a></li>
                 </ul>
             </nav>
-            <nav>
+            <nav class="">
                 <ul class="carrito/login">
                     <li><a href="/carrito">Carrito</a></li>
                     <li><a href="" id="NombreUsuario"> Bienvenido <%= localStorage.getItem('nombreCliente') %>  </a></li>
-                    <li><a href="/" id="Cerrar Sesion"> Cerrar Sesion </a></li>
+                    <li class="">
+                        <a href="/" id="Cerrar Sesion" class="loginHeader"> <span class="material-icons">logout</span>Cerrar Sesion </a>
+                    </li>
                 </ul>
             </nav>
         </header>

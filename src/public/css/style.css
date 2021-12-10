@@ -33,6 +33,7 @@ header a {
     position: relative;
     display: block;
     padding: 5px;
+    align-items: center;
 }
 
 header a::before {
@@ -321,4 +322,10 @@ footer {
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.712) 3px 4px 10px;
     text-align: center;
+}
+
+.loginHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
